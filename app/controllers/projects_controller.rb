@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    params[:project][:existing_task_attributes] ||= {}
+    #params[:project][:tasks] ||= []
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = "Successfully updated project."

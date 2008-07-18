@@ -1,6 +1,7 @@
 <div class="task">
-<% fields_for_task task do |f| -%>
+<% fields_for 'project[tasks]', task, :index => '' do |f| -%>
   <%= error_messages_for :task, :object => task %>
+  <%= f.hidden_field :id unless task.new_record? %>
   <p>
     <%= f.label :name, "Task:" %>
     <%= f.text_field :name %>

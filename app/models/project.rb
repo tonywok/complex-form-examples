@@ -1,31 +1,6 @@
 class Project < ActiveRecord::Base
-  has_many :tasks, :dependent => :destroy
+  has_many :tasks, :dependent => :destroy, :accessible => true
   
   validates_presence_of :name
-  validates_associated :tasks
-  
-  after_update :save_tasks
-
-  def new_task_attributes=(task_attributes)
-    task_attributes.each do |attributes|
-      tasks.build(attributes)
-    end
-  end
-  
-  def existing_task_attributes=(task_attributes)
-    tasks.reject(&:new_record?).each do |task|
-      attributes = task_attributes[task.id.to_s]
-      if attributes
-        task.attributes = attributes
-      else
-        tasks.delete(task)
-      end
-    end
-  end
-  
-  def save_tasks
-    tasks.each do |task|
-      task.save(false)
-    end
-  end
+  validates_associated :tasks, :on => :update # automatically validated on create
 end
