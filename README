@@ -1,5 +1,6 @@
 Complex Form Examples
 ---------------------
 
-This example is slightly modified from the original Advanced Rails 
-Recipe. See the commit history for the modifications.
+This example uses the modifications made by David Dollar found at this thread:
+
+http://github.com/ddollar/rails/tree/accessible-association-replacement
