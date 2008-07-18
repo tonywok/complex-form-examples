@@ -1,8 +1,16 @@
 <%= error_messages_for :project %>
-<% form_for @project do |f| %>
+
+<% form_for @project do |f| -%>
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    Name: <%= f.text_field :name %>
   </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+  <div id="tasks">
+    <%= render :partial => 'task', :collection => @project.tasks %>
+  </div>
+  <p>
+    <%= add_task_link "Add a task" %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end -%>

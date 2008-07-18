@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
+    @project.tasks.build
   end
   
   def create
@@ -26,6 +27,7 @@ class ProjectsController < ApplicationController
   end
   
   def update
+    params[:project][:existing_task_attributes] ||= {}
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = "Successfully updated project."
