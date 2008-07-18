@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   has_many :tasks, :dependent => :destroy
   
   validates_presence_of :name
-  validates_associated :tasks
+  validates_associated :tasks, :on => :update # create automatically handles validation
   
   after_update :save_tasks
 
