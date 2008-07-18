@@ -1,5 +1,6 @@
 <div class="task">
 <% fields_for_task task do |f| -%>
+  <%= error_messages_for :task, :object => task %>
   <p>
     Task: <%= f.text_field :name %>
     <%= link_to_function "remove", "$(this).up('.task').remove()" %>
