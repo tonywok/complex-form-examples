@@ -1,6 +1,5 @@
 Complex Form Examples
 ---------------------
 
-This one is copied directly from the Advanced Rails Recipes book.
-
-http://www.pragprog.com/titles/fr_arr/advanced-rails-recipes
+This example is slightly modified from the original Advanced Rails 
+Recipe. See the commit history for the modifications.
