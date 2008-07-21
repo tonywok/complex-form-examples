@@ -24,8 +24,10 @@ class Project < ActiveRecord::Base
   end
   
   def save_tasks
-    tasks.each do |task|
-      task.save(false)
+    if tasks.loaded?
+      tasks.each do |task|
+        task.save(false)
+      end
     end
   end
 end
