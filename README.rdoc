@@ -1,0 +1,3 @@
+= Complex Form Example: Deep Nesting
+
+This solution uses the @accepts_nested_attributes_for@ which was introduced in Rails 2.3. It supports any level of depth in nesting models. The primary challenge in deep nesting is getting the escaping working with JavaScript when adding new records.
