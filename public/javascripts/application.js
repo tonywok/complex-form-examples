@@ -6,7 +6,4 @@ function insert_fields(link, method, content) {
   $(link).up().insert({
     before: content.replace(regexp, new_id)
   });
-  // $(element_id).insert({
-  //   bottom: content.replace(/NEW_RECORD/g, new_id)
-  // });
 }
