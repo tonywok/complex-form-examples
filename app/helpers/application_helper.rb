@@ -2,8 +2,7 @@
 module ApplicationHelper
   def add_child_link(name, f, method)
     fields = new_child_fields(f, method)
-    js = "insert_fields(this, \"#{method}\", \"#{escape_javascript(fields)}\")"
-    "<a href=\"#\" onclick=\"#{h(js)}\">#{name}</a>"
+    link_to_function(name, h("insert_fields(this, \"#{method}\", \"#{escape_javascript(fields)}\")"))
   end
   
   def new_child_fields(form_builder, method, options = {})
