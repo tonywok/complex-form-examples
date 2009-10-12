@@ -6,6 +6,7 @@ $(document).ready(function() {
     var new_id  = new Date().getTime();
         
     $(this).parent().before(content.replace(regexp, new_id));    
+    return false;
   });
   
   $('.remove_child').live('click', function() {
