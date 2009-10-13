@@ -1,5 +1,5 @@
 $(function() {
-  $('form a.add_child').click(function() {
+  $('form a.add_child').live('click', function() {
     var assoc   = $(this).attr('data-association');
     var content = $('#' + assoc + '_fields_template').html();
     var regexp  = new RegExp('new_' + assoc, 'g');
@@ -14,7 +14,7 @@ $(function() {
     if(hidden_field) {
       hidden_field.value = '1';
     }
-    $(this).parents('.fields').hide();
+    $(this).parent('.fields').hide();
     return false;
   });
 });
