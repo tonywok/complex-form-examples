@@ -2,10 +2,16 @@
   <%= f.label :name, "Task" %>
   <%= f.text_field :name %>
   <%= remove_child_link "remove", f %>
+<<<<<<< HEAD
   <div class="children_fields">
     <% f.fields_for :assignments do |assignment_form| %>
       <%= render :partial => 'assignment', :locals => { :f => assignment_form } %>
     <% end %>
     <p><%= add_child_link "New Assignment", f, :assignments %></p>
   </div>
+=======
+  <%# Alternatively you can use a check box: %>
+  <%# f.check_box :_delete %>
+  <%# f.label :_delete, "(remove)" %>
+>>>>>>> unobtrusive-jquery
 </div>
