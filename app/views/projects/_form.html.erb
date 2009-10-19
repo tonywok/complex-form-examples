@@ -13,3 +13,7 @@
   <%= new_child_fields_template(f, :tasks)%>
   <p><%= f.submit "Submit" %></p>
 <% end %>
+
+<%= yield :tasks_fields_template %>
+<%= yield :assignments_fields_template %>
+<%= yield :steps_fields_template %>
