@@ -7,6 +7,9 @@ $(function() {
     // Make the context correct by replacing new_<parents> with the generated ID
     // of each of the parent objects
     var context = ($(this).parents('.fields').children('input:first').attr('name') || '').replace(new RegExp('\[[a-z]+\]$'), '');
+    
+    // context will be something like: 
+    // project[tasks_attributes][1255929127459][assignments_attributes][1255929128105]
     if(context) {
       var parent_names = context.match(/[a-z]+_attributes/g) || []
       var parent_ids   = context.match(/[0-9]+/g)
