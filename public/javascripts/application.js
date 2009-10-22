@@ -16,9 +16,6 @@ $(function() {
       var parent_names = context.match(/[a-z]+_attributes/g) || []
       var parent_ids   = context.match(/[0-9]+/g)
       
-      console.log(parent_names);
-      console.log(parent_ids);
-      
       for(i = 0; i < parent_names.length; i++) {
         if(parent_ids[i]) {
           content = content.replace(
