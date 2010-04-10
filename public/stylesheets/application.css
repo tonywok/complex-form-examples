@@ -12,6 +12,10 @@ a {
   color: #0000FF;
 }
 
+a.add_child {
+  display: none;
+}
+
 body {
   background-color: #4B7399;
 }

@@ -10,17 +10,17 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
   end
-  
+ 
   def create
     @project = Project.new(params[:project])
-    if @project.save
-      flash[:notice] = "Successfully created project."
-      redirect_to @project
-    else
+    if params[:add_task] || !@project.save 
+      3.times { @project.tasks.build }
       render :action => 'new'
+    else
+      redirect_to @project
     end
   end
-  
+
   def edit
     @project = Project.find(params[:id])
   end

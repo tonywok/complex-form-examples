@@ -1,5 +1,8 @@
 $(function() {
-  $('form a.add_child').click(function() {
+
+  $('a.add_child').css('display', 'inline');
+  $('form a.add_child').click(function(event) {
+    event.preventDefault();
     var assoc   = $(this).attr('data-association');
     var content = $('#' + assoc + '_fields_template').html();
     var regexp  = new RegExp('new_' + assoc, 'g');
